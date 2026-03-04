@@ -44,7 +44,7 @@ export function LandingPageV2() {
         <div className="container mx-auto flex h-20 items-center justify-between px-8">
           <div className="flex items-center gap-12">
             <div className="flex items-center gap-2.5">
-              <div className={`flex h-9 w-9 items-center justify-center rounded-xl ${BRAND_BG} text-white shadow-lg shadow-indigo-200`}>
+              <div className={`flex h-9 w-9 items-center justify-center rounded-xl ${BRAND_BG} text-white`}>
                 <Sparkles className="h-5 w-5" />
               </div>
               <span className="text-xl font-bold tracking-tight text-zinc-900">Lumina</span>
@@ -58,7 +58,7 @@ export function LandingPageV2() {
           </div>
           <div className="flex items-center gap-4">
             <Button variant="ghost" className="hidden sm:inline-flex font-semibold text-zinc-600">Log in</Button>
-            <Button className={`${BRAND_BG} hover:bg-indigo-700 text-white rounded-full px-7 h-11 font-bold shadow-md shadow-indigo-100 transition-all hover:scale-105 active:scale-95`}>
+            <Button className={`${BRAND_BG} hover:bg-indigo-700 text-white rounded-full px-7 h-11 font-bold transition-all hover:scale-105 active:scale-95`}>
               Start Free Trial
             </Button>
           </div>
@@ -85,7 +85,7 @@ export function LandingPageV2() {
                 The world&apos;s most advanced growth engine. Predict churn, automate outreach, and scale your revenue with AI-powered customer intelligence.
               </p>
               <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
-                <Button size="lg" className={`h-16 px-10 text-lg font-bold ${BRAND_BG} text-white hover:bg-indigo-700 rounded-2xl shadow-xl shadow-indigo-100 transition-all hover:-translate-y-1 active:scale-95`}>
+                <Button size="lg" className={`h-16 px-10 text-lg font-bold ${BRAND_BG} text-white hover:bg-indigo-700 rounded-2xl transition-all hover:-translate-y-1 active:scale-95`}>
                   Get Started for Free
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -97,7 +97,7 @@ export function LandingPageV2() {
               <div className="mt-12 flex items-center gap-6">
                  <div className="flex -space-x-3">
                     {[1,2,3,4].map(i => (
-                      <img key={i} src={`https://i.pravatar.cc/100?u=${i}`} alt="user" className="h-10 w-10 rounded-full border-4 border-white shadow-sm" />
+                      <img key={i} src={`https://i.pravatar.cc/100?u=${i}`} alt="user" className="h-10 w-10 rounded-full border-4 border-white" />
                     ))}
                  </div>
                  <div className="text-left">
@@ -112,8 +112,8 @@ export function LandingPageV2() {
             {/* Product Interface Mockup */}
             <div className="mt-24 relative max-w-6xl mx-auto group">
               <div className={`absolute -inset-4 ${BRAND_BG} rounded-[3rem] opacity-[0.03] blur-3xl transition-opacity group-hover:opacity-[0.05]`} />
-              <div className="relative rounded-[2.5rem] border border-zinc-100 bg-white p-4 shadow-2xl shadow-zinc-200/50">
-                 <div className="rounded-[1.8rem] border border-zinc-100 bg-zinc-50/50 aspect-[16/9] overflow-hidden flex flex-col shadow-inner">
+              <div className="relative rounded-[2.5rem] border border-zinc-100 bg-white p-4">
+                 <div className="rounded-[1.8rem] border border-zinc-100 bg-zinc-50/50 aspect-[16/9] overflow-hidden flex flex-col">
                     {/* Mockup UI Header */}
                     <div className="h-14 border-b border-zinc-100 bg-white/80 backdrop-blur flex items-center px-8 justify-between">
                        <div className="flex gap-2">
@@ -154,13 +154,13 @@ export function LandingPageV2() {
                           </div>
                           <div className="grid grid-cols-3 gap-8">
                              {[1,2,3].map(i => (
-                               <div key={i} className="h-44 bg-white border border-zinc-100 rounded-[1.5rem] p-6 shadow-sm flex flex-col justify-between">
+                               <div key={i} className="h-44 bg-white border border-zinc-100 rounded-[1.5rem] p-6 flex flex-col justify-between">
                                   <div className="h-3 w-1/2 bg-zinc-100 rounded-full" />
                                   <div className="h-12 w-full bg-zinc-50 rounded-lg" />
                                </div>
                              ))}
                           </div>
-                          <div className="h-72 bg-white border border-zinc-100 rounded-[2rem] shadow-sm flex items-center justify-center">
+                          <div className="h-72 bg-white border border-zinc-100 rounded-[2rem] flex items-center justify-center">
                              <TrendingUp className="h-24 w-24 text-zinc-50" />
                           </div>
                        </div>
@@ -220,8 +220,8 @@ export function LandingPageV2() {
                   icon: <Database className="h-7 w-7" />
                 }
               ].map((f, i) => (
-                <div key={i} className="group p-10 bg-white border border-zinc-100 rounded-[2.5rem] shadow-sm transition-all hover:shadow-xl hover:shadow-indigo-100/30 hover:-translate-y-2">
-                   <div className={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl ${BRAND_BG} text-white shadow-lg shadow-indigo-100`}>
+                <div key={i} className="group p-10 bg-white border border-zinc-100 rounded-[2.5rem] transition-all hover:-translate-y-2">
+                   <div className={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl ${BRAND_BG} text-white`}>
                       {f.icon}
                    </div>
                    <h4 className="text-2xl font-bold mb-4">{f.title}</h4>
@@ -259,7 +259,7 @@ export function LandingPageV2() {
                         "Automated cohort reporting"
                       ].map(item => (
                         <div key={item} className="flex items-center gap-4">
-                           <div className={`h-6 w-6 rounded-full ${BRAND_BG} flex items-center justify-center shadow-md shadow-indigo-100`}>
+                           <div className={`h-6 w-6 rounded-full ${BRAND_BG} flex items-center justify-center`}>
                               <Check className="h-3.5 w-3.5 text-white" />
                            </div>
                            <span className="font-semibold text-zinc-700">{item}</span>
@@ -268,7 +268,7 @@ export function LandingPageV2() {
                    </div>
                 </div>
                 <div className="relative rounded-[3rem] border border-zinc-100 bg-zinc-50/50 p-8">
-                   <div className="aspect-square bg-white rounded-[2rem] shadow-2xl shadow-zinc-200/50 flex flex-col p-10">
+                   <div className="aspect-square bg-white rounded-[2rem] flex flex-col p-10">
                       <div className="flex items-center justify-between mb-12">
                          <div className="h-3 w-32 bg-zinc-100 rounded-full" />
                          <div className="h-8 w-24 bg-zinc-50 rounded-lg" />
@@ -276,7 +276,7 @@ export function LandingPageV2() {
                       <div className="flex-1 flex items-end gap-4">
                          <div className="h-1/3 flex-1 bg-zinc-50 rounded-xl" />
                          <div className="h-2/3 flex-1 bg-zinc-100 rounded-xl" />
-                         <div className={`h-[85%] flex-1 ${BRAND_BG} rounded-xl shadow-lg shadow-indigo-200`} />
+                         <div className={`h-[85%] flex-1 ${BRAND_BG} rounded-xl`} />
                          <div className="h-1/2 flex-1 bg-zinc-50 rounded-xl" />
                       </div>
                       <div className="mt-10 flex justify-center">
@@ -368,9 +368,9 @@ export function LandingPageV2() {
                     avatar: "https://i.pravatar.cc/100?u=36"
                   }
                 ].map((t, i) => (
-                  <div key={i} className="flex flex-col items-center text-center p-12 rounded-[3rem] bg-zinc-50 border border-zinc-100 transition-all hover:bg-white hover:shadow-2xl hover:shadow-indigo-100/50 hover:border-indigo-100">
+                  <div key={i} className="flex flex-col items-center text-center p-12 rounded-[3rem] bg-zinc-50 border border-zinc-100 transition-all hover:bg-white hover:border-indigo-100">
                      <div className="mb-8">
-                        <img src={t.avatar} alt={t.name} className="h-16 w-16 rounded-full border-4 border-white shadow-md mx-auto" />
+                        <img src={t.avatar} alt={t.name} className="h-16 w-16 rounded-full border-4 border-white mx-auto" />
                      </div>
                      <p className="text-lg text-zinc-600 mb-10 font-medium leading-relaxed">&quot;{t.text}&quot;</p>
                      <div>
@@ -393,7 +393,7 @@ export function LandingPageV2() {
 
              <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Basic */}
-                <div className="bg-white border border-zinc-100 p-12 rounded-[3rem] flex flex-col shadow-sm transition-all hover:shadow-xl">
+                <div className="bg-white border border-zinc-100 p-12 rounded-[3rem] flex flex-col transition-all">
                    <h4 className="text-xl font-bold mb-2">Starter</h4>
                    <p className="text-zinc-500 text-sm mb-10 font-medium">Perfect for small teams finding their way.</p>
                    <div className="mb-10">
@@ -407,11 +407,11 @@ export function LandingPageV2() {
                         </div>
                       ))}
                    </div>
-                   <Button className="w-full h-14 bg-zinc-50 text-zinc-900 hover:bg-zinc-100 font-bold rounded-2xl shadow-sm transition-all">Get Started</Button>
+                   <Button className="w-full h-14 bg-zinc-50 text-zinc-900 hover:bg-zinc-100 font-bold rounded-2xl transition-all">Get Started</Button>
                 </div>
 
                 {/* Pro - Featured */}
-                <div className="bg-white border-2 border-indigo-600 p-12 rounded-[3.5rem] flex flex-col shadow-2xl shadow-indigo-100 scale-105 relative z-10">
+                <div className="bg-white border-2 border-indigo-600 p-12 rounded-[3.5rem] flex flex-col scale-105 relative z-10">
                    <div className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 ${BRAND_BG} text-white text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2 rounded-full`}>Most Popular</div>
                    <h4 className="text-xl font-bold mb-2">Growth</h4>
                    <p className="text-zinc-500 text-sm mb-10 font-medium">Scale your operations with advanced AI.</p>
@@ -426,11 +426,11 @@ export function LandingPageV2() {
                         </div>
                       ))}
                    </div>
-                   <Button className={`w-full h-14 ${BRAND_BG} text-white hover:bg-indigo-700 font-bold rounded-2xl shadow-lg shadow-indigo-200 transition-all`}>Start Free Trial</Button>
+                   <Button className={`w-full h-14 ${BRAND_BG} text-white hover:bg-indigo-700 font-bold rounded-2xl transition-all`}>Start Free Trial</Button>
                 </div>
 
                 {/* Enterprise */}
-                <div className="bg-white border border-zinc-100 p-12 rounded-[3rem] flex flex-col shadow-sm transition-all hover:shadow-xl">
+                <div className="bg-white border border-zinc-100 p-12 rounded-[3rem] flex flex-col transition-all">
                    <h4 className="text-xl font-bold mb-2">Enterprise</h4>
                    <p className="text-zinc-500 text-sm mb-10 font-medium">Full control for global organizations.</p>
                    <div className="mb-10">
@@ -443,7 +443,7 @@ export function LandingPageV2() {
                         </div>
                       ))}
                    </div>
-                   <Button className="w-full h-14 bg-zinc-50 text-zinc-900 hover:bg-zinc-100 font-bold rounded-2xl shadow-sm transition-all">Talk to Sales</Button>
+                   <Button className="w-full h-14 bg-zinc-50 text-zinc-900 hover:bg-zinc-100 font-bold rounded-2xl transition-all">Talk to Sales</Button>
                 </div>
              </div>
           </div>
@@ -469,7 +469,7 @@ export function LandingPageV2() {
                        onClick={() => setActiveFaq(activeFaq === i ? null : i)}
                      >
                         <span className="text-xl font-bold text-zinc-900">{item.q}</span>
-                        <div className={`flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm transition-transform duration-300 ${activeFaq === i ? 'rotate-180' : ''}`}>
+                        <div className={`flex h-8 w-8 items-center justify-center rounded-full bg-white transition-transform duration-300 ${activeFaq === i ? 'rotate-180' : ''}`}>
                            <ChevronDown className={`h-5 w-5 ${BRAND_COLOR}`} />
                         </div>
                      </button>
@@ -498,7 +498,7 @@ export function LandingPageV2() {
                 Join thousands of high-performing teams who use Lumina to drive predictable revenue growth.
              </p>
              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button size="lg" className={`h-20 px-12 text-2xl font-black ${BRAND_BG} text-white hover:bg-indigo-700 rounded-[2rem] shadow-2xl shadow-indigo-100 transition-all hover:-translate-y-2`}>
+                <Button size="lg" className={`h-20 px-12 text-2xl font-black ${BRAND_BG} text-white hover:bg-indigo-700 rounded-[2rem] transition-all hover:-translate-y-2`}>
                    Start Free Trial
                 </Button>
                 <Button variant="outline" size="lg" className="h-20 px-12 text-2xl font-black border-zinc-200 text-zinc-900 hover:bg-zinc-50 rounded-[2rem] transition-all">
@@ -515,7 +515,7 @@ export function LandingPageV2() {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-16 mb-24">
                <div className="col-span-2">
                   <div className="flex items-center gap-2.5 mb-8">
-                    <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${BRAND_BG} text-white shadow-lg shadow-indigo-100`}>
+                    <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${BRAND_BG} text-white`}>
                       <Sparkles className="h-4 w-4" />
                     </div>
                     <span className="text-lg font-bold tracking-tight text-zinc-900">Lumina</span>

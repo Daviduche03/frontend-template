@@ -1,7 +1,7 @@
-import { LandingPageV2 } from "@/components/landing-page-v2";
+import { LandingPage } from "@/components/landing-page";
 
 export function App() {
-  return <LandingPageV2 />;
+  return <LandingPage />;
 }
 
 export default App;
