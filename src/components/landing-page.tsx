@@ -14,88 +14,125 @@ import {
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 
 export function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
-    <div className="flex min-h-screen flex-col bg-white text-slate-950 font-sans selection:bg-slate-900 selection:text-white antialiased">
-      {/* --- Navigation --- */}
-      <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md">
-        <div className="container mx-auto flex h-16 items-center justify-between px-6 lg:px-12">
-          <div className="flex items-center gap-10">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-white">
-                <Zap className="h-4.5 w-4.5 fill-current" />
+    <div className="flex min-h-screen flex-col bg-white text-violet-600 font-sans selection:bg-slate-900 selection:text-white antialiased">
+      {/* --- Floating Navigation --- */}
+      <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+        <header className="w-full max-w-4xl rounded-3xl border border-white/20 bg-white/40 backdrop-blur-2xl px-6 py-3 transition-all hover:bg-white/50">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 group cursor-pointer">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-600 text-white transition-transform group-hover:scale-110 group-hover:-rotate-6">
+                <Zap className="h-5 w-5 fill-current" />
               </div>
-              <span className="text-lg font-bold tracking-tight">NexusFlow</span>
+              <span className="text-lg font-black tracking-tighter">NexusFlow</span>
             </div>
+
             <nav className="hidden lg:flex items-center gap-8">
-              <a href="#features" className="text-sm font-semibold text-slate-500 hover:text-slate-950 transition-colors">Features</a>
-              <a href="#platform" className="text-sm font-semibold text-slate-500 hover:text-slate-950 transition-colors">Platform</a>
-              <a href="#pricing" className="text-sm font-semibold text-slate-500 hover:text-slate-950 transition-colors">Pricing</a>
-              <a href="#docs" className="text-sm font-semibold text-slate-500 hover:text-slate-950 transition-colors">Docs</a>
+              {['Features', 'Platform', 'Pricing', 'Docs'].map((item) => (
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase()}`} 
+                  className="relative text-sm font-bold text-slate-600 hover:text-slate-950 transition-colors group/link"
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-violet-600 transition-all group-hover/link:w-full" />
+                </a>
+              ))}
             </nav>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="font-semibold text-slate-600">Log in</Button>
-            <Button size="sm" className="bg-slate-950 text-white hover:bg-slate-800 rounded-full px-6 h-9 font-bold transition-all hover:scale-105">
-              Get Started
-            </Button>
-          </div>
 
-          <button className="lg:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
+            <div className="hidden md:flex items-center gap-3">
+              <Button variant="ghost" className="font-bold text-slate-600 hover:bg-transparent hover:text-slate-950 transition-colors">Log in</Button>
+              <Button className="bg-violet-600 text-white hover:bg-violet-700 rounded-2xl px-6 h-10 font-bold transition-all hover:scale-105 active:scale-95">
+                Join Now
+              </Button>
+            </div>
 
-        {/* Mobile Menu */}
+            <button 
+              className="lg:hidden p-2 rounded-xl hover:bg-white/20 transition-colors" 
+              onClick={() => setIsMenuOpen(true)}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+        </header>
+
+        {/* Mobile Menu Overlay */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-slate-100 p-6 bg-white animate-in slide-in-from-top-4 duration-300">
-            <nav className="flex flex-col gap-6 font-semibold">
-              <a href="#features" className="text-slate-600">Features</a>
-              <a href="#platform" className="text-slate-600">Platform</a>
-              <a href="#pricing" className="text-slate-600">Pricing</a>
-              <a href="#docs" className="text-slate-600">Docs</a>
-              <Separator />
-              <div className="flex flex-col gap-3">
-                <Button variant="ghost" className="justify-start">Log in</Button>
-                <Button className="bg-slate-950 text-white w-full">Get Started</Button>
+          <div className="fixed inset-0 z-[60] bg-white/80 backdrop-blur-3xl animate-in fade-in duration-300 flex flex-col p-8">
+            <div className="flex justify-between items-center mb-16">
+              <div className="flex items-center gap-2">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-600 text-white">
+                  <Zap className="h-5 w-5 fill-current" />
+                </div>
+                <span className="text-xl font-black">NexusFlow</span>
+              </div>
+              <button 
+                className="p-3 rounded-2xl bg-slate-100 hover:bg-slate-200 transition-colors" 
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            <nav className="flex flex-col gap-8">
+              {['Features', 'Platform', 'Pricing', 'Docs'].map((item, i) => (
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase()}`} 
+                  className="text-4xl font-black tracking-tight hover:translate-x-4 transition-transform duration-300"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
+              <Separator className="my-4" />
+              <div className="flex flex-col gap-4">
+                <Button variant="outline" className="h-16 rounded-2xl text-xl font-bold border-slate-200">Log in</Button>
+                <Button className="h-16 rounded-2xl text-xl font-bold bg-violet-600 text-white">Get Started</Button>
               </div>
             </nav>
           </div>
         )}
-      </header>
+      </div>
 
       <main className="flex-1">
         {/* --- Hero Section --- */}
-        <section className="relative overflow-hidden pt-20 pb-20 lg:pt-32 lg:pb-32">
+        <section className="relative overflow-hidden pt-32 pb-20 lg:pt-48 lg:pb-32">
           {/* Subtle decorative elements */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-[0.03]" 
                style={{ backgroundImage: 'radial-gradient(circle, #0f172a 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
           
-          <div className="container mx-auto px-6 lg:px-12 relative z-10">
-            <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
-              <Badge variant="outline" className="mb-6 border-slate-200 bg-slate-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-500 rounded-full">
-                Introducing V2 — Now with AI-Powered Workflows
-              </Badge>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 text-slate-950 leading-[0.95]">
-                Automate your <br className="hidden md:block" /> 
-                <span className="text-slate-400">entire product cycle.</span>
+          <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-8">
+            <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-24">
+              <div className="mb-10 inline-flex items-center rounded-full border border-slate-200/60 bg-slate-50/50 backdrop-blur-sm px-4 py-2 text-xs font-semibold uppercase tracking-widest text-slate-800">
+                <span className="mr-3 flex h-2 w-2 relative">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                </span>
+                Nexus V2 is now in public beta
+              </div>
+              
+              <h1 className="text-6xl md:text-8xl lg:text-[8rem] font-bold tracking-tighter mb-8 text-slate-950 leading-[0.9] max-w-5xl">
+                Code at the <br className="hidden md:block" />
+                speed of <span className="font-serif italic font-light tracking-tight text-slate-900">thought.</span>
               </h1>
+              
               <p className="text-xl md:text-2xl text-slate-500 mb-12 max-w-2xl font-medium leading-relaxed">
                 The high-performance workflow engine that scales with your engineering team. Ship faster, measure better, and automate everything.
               </p>
-              <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
-                <Button size="lg" className="h-16 px-10 text-lg font-bold bg-slate-950 text-white hover:bg-slate-800 rounded-2xl transition-all hover:-translate-y-1">
+              
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+                <Button className="h-12 px-6 text-sm font-semibold bg-violet-600 text-white hover:bg-violet-700 rounded-full transition-all hover:scale-105 active:scale-95 group">
                   Start Building Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button variant="outline" size="lg" className="h-16 px-10 text-lg font-bold border-slate-200 text-slate-950 hover:bg-slate-50 rounded-2xl transition-all">
+                <Button variant="outline" className="h-12 px-6 text-sm font-semibold border-slate-200 text-slate-950 hover:bg-slate-50 rounded-full transition-all">
                   Book a Demo
                 </Button>
               </div>
@@ -126,7 +163,7 @@ export function LandingPage() {
                        <div className="col-span-9 border border-slate-100 bg-white rounded-2xl p-8 relative overflow-hidden">
                           <div className="flex items-center justify-between mb-10">
                              <div className="h-8 w-1/3 bg-slate-100 rounded-lg" />
-                             <div className="h-8 w-24 bg-slate-950 rounded-lg" />
+                             <div className="h-8 w-24 bg-violet-600 rounded-lg" />
                           </div>
                           <div className="grid grid-cols-2 gap-8">
                              <div className="h-40 bg-slate-50/50 rounded-2xl border border-dashed border-slate-200 flex items-center justify-center">
@@ -152,7 +189,7 @@ export function LandingPage() {
                 <div className="flex items-center gap-2 font-black text-2xl tracking-tighter italic">Vortex</div>
                 <div className="flex items-center gap-2 font-black text-2xl tracking-tighter uppercase">Cirrus</div>
                 <div className="flex items-center gap-2 font-black text-2xl tracking-tighter">ORBIT.</div>
-                <div className="flex items-center gap-2 font-black text-2xl tracking-tighter border-b-4 border-slate-950 leading-none pb-1">ACME</div>
+                <div className="flex items-center gap-2 font-black text-2xl tracking-tighter border-b-4 border-violet-600 leading-none pb-1">ACME</div>
                 <div className="flex items-center gap-2 font-black text-2xl tracking-tighter italic">PULSE</div>
             </div>
           </div>
@@ -161,17 +198,17 @@ export function LandingPage() {
         {/* --- Platform Bento Section (2:1 Arrangement) --- */}
         <section id="platform" className="py-24 lg:py-32 bg-slate-50/30">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="max-w-3xl mb-20">
-              <Badge className="mb-4 bg-slate-950 text-white rounded-full px-4 font-bold uppercase text-[10px] tracking-widest">The Platform</Badge>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tight text-slate-950 mb-6">Designed for scale.</h2>
-              <p className="text-xl text-slate-500 font-medium">Built by engineers, for engineers. A complete ecosystem to automate, observe, and grow your digital products.</p>
+            <div className="max-w-3xl mb-24">
+              <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate-950">The Platform</div>
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-slate-950 mb-6">Designed for <span className="font-serif italic font-light">scale.</span></h2>
+              <p className="text-xl text-slate-500 font-medium leading-relaxed">Built by engineers, for engineers. A complete ecosystem to automate, observe, and grow your digital products.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Card 1 - 2/3 Width */}
               <div className="md:col-span-2 relative group rounded-[2.5rem] border border-slate-100 bg-white p-12 overflow-hidden transition-all hover:-translate-y-1">
                  <div className="relative z-10 max-w-md">
-                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-600 text-white">
                        <Zap className="h-7 w-7 fill-current animate-pulse" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 tracking-tight text-slate-950">Ultra-Fast Infrastructure</h3>
@@ -192,7 +229,7 @@ export function LandingPage() {
 
               {/* Card 2 - 1/3 Width */}
               <div className="group rounded-[2.5rem] border border-slate-100 bg-white p-12 overflow-hidden transition-all hover:-translate-y-1">
-                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-600 text-white">
                     <Shield className="h-7 w-7" />
                  </div>
                  <h3 className="text-2xl font-bold mb-4 tracking-tight text-slate-950">Security Native</h3>
@@ -210,7 +247,7 @@ export function LandingPage() {
 
               {/* Card 3 - 1/3 Width */}
               <div className="group rounded-[2.5rem] border border-slate-100 bg-white p-12 overflow-hidden transition-all hover:-translate-y-1">
-                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-600 text-white">
                     <Terminal className="h-7 w-7" />
                  </div>
                  <h3 className="text-2xl font-bold mb-4 tracking-tight text-slate-950">Unified CLI</h3>
@@ -224,9 +261,9 @@ export function LandingPage() {
               </div>
 
               {/* Card 4 - 2/3 Width */}
-              <div className="md:col-span-2 relative group rounded-[2.5rem] border border-slate-100 bg-slate-950 text-white p-12 overflow-hidden transition-all hover:-translate-y-1">
+              <div className="md:col-span-2 relative group rounded-[2.5rem] border border-slate-100 bg-violet-600 text-white p-12 overflow-hidden transition-all hover:-translate-y-1">
                  <div className="relative z-10 max-w-md">
-                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-slate-950">
+                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-violet-600">
                        <Workflow className="h-7 w-7" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 tracking-tight">Predictive Workflows</h3>
@@ -234,7 +271,7 @@ export function LandingPage() {
                       AI-powered models that understand user intent. Automate customer engagement and product optimizations before your users even ask.
                     </p>
                     <div className="mt-10">
-                       <Button size="lg" className="rounded-full bg-white text-slate-950 hover:bg-slate-100 font-bold">
+                       <Button className="h-11 px-6 text-sm rounded-full bg-white text-violet-600 hover:bg-slate-100 font-bold">
                           Get Early Access
                        </Button>
                     </div>
@@ -260,9 +297,9 @@ export function LandingPage() {
         <section className="py-24 lg:py-32 bg-white">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-black mb-16 italic tracking-tight text-slate-950 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-serif font-light mb-16 italic tracking-tight text-slate-900 leading-relaxed">
                 &quot;NexusFlow has completely transformed how our engineering team operates. 
-                We&apos;ve seen a 40% increase in productivity since switching.&quot;
+                We&apos;ve seen a <span className="font-bold font-sans not-italic">40% increase</span> in productivity since switching.&quot;
               </h2>
               <div className="flex flex-col items-center">
                 <div className="h-20 w-20 rounded-3xl bg-slate-100 mb-6 overflow-hidden border-4 border-white rotate-3 transition-transform hover:rotate-0">
@@ -281,8 +318,8 @@ export function LandingPage() {
         <section id="pricing" className="py-24 lg:py-32 bg-slate-50/50 border-t border-slate-100">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="text-center mb-24 max-w-2xl mx-auto">
-              <h2 className="text-4xl md:text-6xl font-black tracking-tight text-slate-950 mb-6">Simple pricing.</h2>
-              <p className="text-xl text-slate-500 font-medium">No hidden fees, no complexity. Choose the plan that fits your growth stage.</p>
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-slate-950 mb-6">Simple <span className="font-serif italic font-light">pricing.</span></h2>
+              <p className="text-xl text-slate-500 font-medium leading-relaxed">No hidden fees, no complexity. Choose the plan that fits your growth stage.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -301,12 +338,12 @@ export function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full h-14 rounded-2xl font-black border-slate-200">Get Started</Button>
+                <Button variant="outline" className="w-full h-12 text-sm rounded-2xl font-bold border-slate-200">Get Started</Button>
               </div>
 
               {/* Pro */}
-              <div className="bg-white border-4 border-slate-950 p-12 rounded-[3rem] flex flex-col scale-105 relative z-10">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-950 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2 rounded-full">Most Popular</div>
+              <div className="bg-white border-4 border-violet-600 p-12 rounded-[3rem] flex flex-col scale-105 relative z-10">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-violet-600 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2 rounded-full">Most Popular</div>
                 <h4 className="text-xl font-bold mb-2">Professional</h4>
                 <p className="text-slate-400 text-sm mb-10 font-medium">Everything you need to grow.</p>
                 <div className="mb-10">
@@ -320,7 +357,7 @@ export function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full h-14 rounded-2xl font-black bg-slate-950 text-white hover:bg-slate-800">Start 14-day Free Trial</Button>
+                <Button className="w-full h-12 text-sm rounded-2xl font-bold bg-violet-600 text-white hover:bg-violet-700">Start 14-day Free Trial</Button>
               </div>
 
               {/* Enterprise */}
@@ -337,7 +374,7 @@ export function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full h-14 rounded-2xl font-black border-slate-200">Contact Sales</Button>
+                <Button variant="outline" className="w-full h-12 text-sm rounded-2xl font-bold border-slate-200">Contact Sales</Button>
               </div>
             </div>
           </div>
@@ -346,19 +383,19 @@ export function LandingPage() {
         {/* --- Final CTA --- */}
         <section className="py-24 lg:py-40 border-t border-slate-100 relative overflow-hidden">
           <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tight mb-10 leading-[0.9]">
+            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-10 leading-[0.9]">
               Ready to <br /> 
-              <span className="text-slate-400">scale your team?</span>
+              <span className="font-serif italic font-light text-slate-900">scale your team?</span>
             </h2>
             <p className="text-xl md:text-2xl text-slate-500 mb-16 max-w-2xl mx-auto font-medium">
               Join thousands of teams already using NexusFlow to build amazing products. 
               Start your free trial today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="h-20 px-12 text-2xl font-black bg-slate-950 text-white hover:bg-slate-800 rounded-[2rem] transition-all hover:-translate-y-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="h-14 px-8 text-base font-bold bg-violet-600 text-white hover:bg-violet-700 rounded-full transition-all hover:-translate-y-1">
                 Get Started for Free
               </Button>
-              <Button variant="outline" size="lg" className="h-20 px-12 text-2xl font-black border-slate-200 text-slate-950 hover:bg-slate-50 rounded-[2rem] transition-all">
+              <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold border-slate-200 text-slate-950 hover:bg-slate-50 rounded-full transition-all hover:-translate-y-1">
                 View Documentation
               </Button>
             </div>
