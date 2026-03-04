@@ -9,7 +9,6 @@ import {
   Shield,
   Activity,
   Terminal,
-  MousePointer2,
   Workflow
 } from "lucide-react"
 
@@ -20,13 +19,13 @@ export function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
-    <div className="flex min-h-screen flex-col bg-white text-violet-600 font-sans selection:bg-slate-900 selection:text-white antialiased">
+    <div className="flex min-h-screen flex-col bg-white text-violet-950 font-sans selection:bg-slate-900 selection:text-white antialiased">
       {/* --- Floating Navigation --- */}
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
         <header className="w-full max-w-4xl rounded-3xl border border-white/20 bg-white/40 backdrop-blur-2xl px-6 py-3 transition-all hover:bg-white/50">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 group cursor-pointer">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-600 text-white transition-transform group-hover:scale-110 group-hover:-rotate-6">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-950 text-white transition-transform group-hover:scale-110 group-hover:-rotate-6">
                 <Zap className="h-5 w-5 fill-current" />
               </div>
               <span className="text-lg font-black tracking-tighter">NexusFlow</span>
@@ -40,14 +39,14 @@ export function LandingPage() {
                   className="relative text-sm font-bold text-slate-600 hover:text-slate-950 transition-colors group/link"
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-violet-600 transition-all group-hover/link:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-violet-950 transition-all group-hover/link:w-full" />
                 </a>
               ))}
             </nav>
 
             <div className="hidden md:flex items-center gap-3">
               <Button variant="ghost" className="font-bold text-slate-600 hover:bg-transparent hover:text-slate-950 transition-colors">Log in</Button>
-              <Button className="bg-violet-600 text-white hover:bg-violet-700 rounded-2xl px-6 h-10 font-bold transition-all hover:scale-105 active:scale-95">
+              <Button className="bg-violet-950 text-white hover:bg-violet-900 rounded-2xl px-6 h-10 font-bold transition-all hover:scale-105 active:scale-95">
                 Join Now
               </Button>
             </div>
@@ -66,7 +65,7 @@ export function LandingPage() {
           <div className="fixed inset-0 z-[60] bg-white/80 backdrop-blur-3xl animate-in fade-in duration-300 flex flex-col p-8">
             <div className="flex justify-between items-center mb-16">
               <div className="flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-600 text-white">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-950 text-white">
                   <Zap className="h-5 w-5 fill-current" />
                 </div>
                 <span className="text-xl font-black">NexusFlow</span>
@@ -94,7 +93,7 @@ export function LandingPage() {
               <Separator className="my-4" />
               <div className="flex flex-col gap-4">
                 <Button variant="outline" className="h-16 rounded-2xl text-xl font-bold border-slate-200">Log in</Button>
-                <Button className="h-16 rounded-2xl text-xl font-bold bg-violet-600 text-white">Get Started</Button>
+                <Button className="h-16 rounded-2xl text-xl font-bold bg-violet-950 text-white">Get Started</Button>
               </div>
             </nav>
           </div>
@@ -108,16 +107,8 @@ export function LandingPage() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-[0.03]" 
                style={{ backgroundImage: 'radial-gradient(circle, #0f172a 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
           
-          <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-8">
+          <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-4">
             <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-24">
-              <div className="mb-10 inline-flex items-center rounded-full border border-slate-200/60 bg-slate-50/50 backdrop-blur-sm px-4 py-2 text-xs font-semibold uppercase tracking-widest text-slate-800">
-                <span className="mr-3 flex h-2 w-2 relative">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-                </span>
-                Nexus V2 is now in public beta
-              </div>
-              
               <h1 className="text-6xl md:text-8xl lg:text-[8rem] font-bold tracking-tighter mb-8 text-slate-950 leading-[0.9] max-w-5xl">
                 Code at the <br className="hidden md:block" />
                 speed of <span className="font-serif italic font-light tracking-tight text-slate-900">thought.</span>
@@ -128,7 +119,7 @@ export function LandingPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                <Button className="h-12 px-6 text-sm font-semibold bg-violet-600 text-white hover:bg-violet-700 rounded-full transition-all hover:scale-105 active:scale-95 group">
+                <Button className="h-12 px-6 text-sm font-semibold bg-violet-950 text-white hover:bg-violet-900 rounded-full transition-all hover:scale-105 active:scale-95 group">
                   Start Building Now
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -163,7 +154,7 @@ export function LandingPage() {
                        <div className="col-span-9 border border-slate-100 bg-white rounded-2xl p-8 relative overflow-hidden">
                           <div className="flex items-center justify-between mb-10">
                              <div className="h-8 w-1/3 bg-slate-100 rounded-lg" />
-                             <div className="h-8 w-24 bg-violet-600 rounded-lg" />
+                             <div className="h-8 w-24 bg-violet-950 rounded-lg" />
                           </div>
                           <div className="grid grid-cols-2 gap-8">
                              <div className="h-40 bg-slate-50/50 rounded-2xl border border-dashed border-slate-200 flex items-center justify-center">
@@ -189,7 +180,7 @@ export function LandingPage() {
                 <div className="flex items-center gap-2 font-black text-2xl tracking-tighter italic">Vortex</div>
                 <div className="flex items-center gap-2 font-black text-2xl tracking-tighter uppercase">Cirrus</div>
                 <div className="flex items-center gap-2 font-black text-2xl tracking-tighter">ORBIT.</div>
-                <div className="flex items-center gap-2 font-black text-2xl tracking-tighter border-b-4 border-violet-600 leading-none pb-1">ACME</div>
+                <div className="flex items-center gap-2 font-black text-2xl tracking-tighter border-b-4 border-violet-950 leading-none pb-1">ACME</div>
                 <div className="flex items-center gap-2 font-black text-2xl tracking-tighter italic">PULSE</div>
             </div>
           </div>
@@ -204,89 +195,61 @@ export function LandingPage() {
               <p className="text-xl text-slate-500 font-medium leading-relaxed">Built by engineers, for engineers. A complete ecosystem to automate, observe, and grow your digital products.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card 1 - 2/3 Width */}
-              <div className="md:col-span-2 relative group rounded-[2.5rem] border border-slate-100 bg-white p-12 overflow-hidden transition-all hover:-translate-y-1">
-                 <div className="relative z-10 max-w-md">
-                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-600 text-white">
-                       <Zap className="h-7 w-7 fill-current animate-pulse" />
+              <div className="md:col-span-2 rounded-[2rem] border border-slate-200/60 bg-white p-10 flex flex-col justify-between transition-colors hover:border-slate-300">
+                 <div>
+                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-slate-900">
+                       <Zap className="h-5 w-5 fill-current" />
                     </div>
-                    <h3 className="text-3xl font-bold mb-4 tracking-tight text-slate-950">Ultra-Fast Infrastructure</h3>
-                    <p className="text-slate-500 text-lg leading-relaxed">
-                      Deploy global logic with sub-millisecond cold starts. Our distributed network ensures your users get the lowest latency possible, everywhere.
-                    </p>
+                    <h3 className="text-3xl font-bold mb-3 tracking-tight text-slate-950">Ultra-Fast Infrastructure.</h3>
                  </div>
-                 {/* Moving SVG Element */}
-                 <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity">
-                    <div className="relative w-64 h-64">
-                       <div className="absolute inset-0 border-[3px] border-slate-900 rounded-full animate-[spin_8s_linear_infinite]" />
-                       <div className="absolute inset-8 border-[3px] border-slate-400 rounded-full animate-[spin_12s_linear_infinite_reverse]" />
-                       <div className="absolute inset-16 border-[3px] border-slate-200 rounded-full animate-[spin_6s_linear_infinite]" />
-                       <Zap className="absolute inset-0 m-auto h-24 w-24 text-slate-950 animate-bounce" />
-                    </div>
-                 </div>
+                 <p className="text-slate-500 text-lg leading-relaxed max-w-lg mt-12">
+                   Deploy global logic with sub-millisecond cold starts. Our distributed network ensures your users get the lowest latency possible, everywhere.
+                 </p>
               </div>
 
               {/* Card 2 - 1/3 Width */}
-              <div className="group rounded-[2.5rem] border border-slate-100 bg-white p-12 overflow-hidden transition-all hover:-translate-y-1">
-                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-600 text-white">
-                    <Shield className="h-7 w-7" />
+              <div className="rounded-[2rem] border border-slate-200/60 bg-white p-10 flex flex-col justify-between transition-colors hover:border-slate-300">
+                 <div>
+                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-slate-900">
+                       <Shield className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 tracking-tight text-slate-950">Security Native.</h3>
                  </div>
-                 <h3 className="text-2xl font-bold mb-4 tracking-tight text-slate-950">Security Native</h3>
-                 <p className="text-slate-500 leading-relaxed">
+                 <p className="text-slate-500 leading-relaxed mt-12">
                    Hardened runtimes and SOC2 compliance out of the box. Your data is isolated, encrypted, and protected.
                  </p>
-                 <div className="mt-12 flex justify-center">
-                    <div className="flex gap-2">
-                       {[1,2,3,4].map(i => (
-                         <div key={i} className={`h-1.5 w-1.5 rounded-full bg-slate-200 animate-pulse`} style={{ animationDelay: `${i * 0.2}s` }} />
-                       ))}
-                    </div>
-                 </div>
               </div>
 
               {/* Card 3 - 1/3 Width */}
-              <div className="group rounded-[2.5rem] border border-slate-100 bg-white p-12 overflow-hidden transition-all hover:-translate-y-1">
-                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-600 text-white">
-                    <Terminal className="h-7 w-7" />
+              <div className="rounded-[2rem] border border-slate-200/60 bg-white p-10 flex flex-col justify-between transition-colors hover:border-slate-300">
+                 <div>
+                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-slate-900">
+                       <Terminal className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 tracking-tight text-slate-950">Unified CLI.</h3>
                  </div>
-                 <h3 className="text-2xl font-bold mb-4 tracking-tight text-slate-950">Unified CLI</h3>
-                 <p className="text-slate-500 leading-relaxed">
+                 <p className="text-slate-500 leading-relaxed mt-12">
                    One tool to rule your entire stack. Deploy, debug, and monitor from the comfort of your terminal.
                  </p>
-                 <div className="mt-12 space-y-2 font-mono text-[10px] text-slate-400">
-                    <div className="flex gap-2"><span>$</span><span className="text-slate-900 group-hover:text-slate-600 transition-colors">nexus deploy --prod</span></div>
-                    <div className="flex gap-2"><span>$</span><span className="text-slate-200 transition-colors duration-1000 group-hover:text-slate-400">analyzing stack...</span></div>
-                 </div>
               </div>
 
               {/* Card 4 - 2/3 Width */}
-              <div className="md:col-span-2 relative group rounded-[2.5rem] border border-slate-100 bg-violet-600 text-white p-12 overflow-hidden transition-all hover:-translate-y-1">
-                 <div className="relative z-10 max-w-md">
-                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-violet-600">
-                       <Workflow className="h-7 w-7" />
+              <div className="md:col-span-2 rounded-[2rem] border border-slate-200/60 bg-slate-50 p-10 flex flex-col justify-between transition-colors hover:border-slate-300">
+                 <div>
+                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-900">
+                       <Workflow className="h-5 w-5" />
                     </div>
-                    <h3 className="text-3xl font-bold mb-4 tracking-tight">Predictive Workflows</h3>
-                    <p className="text-slate-400 text-lg leading-relaxed">
-                      AI-powered models that understand user intent. Automate customer engagement and product optimizations before your users even ask.
-                    </p>
-                    <div className="mt-10">
-                       <Button className="h-11 px-6 text-sm rounded-full bg-white text-violet-600 hover:bg-slate-100 font-bold">
-                          Get Early Access
-                       </Button>
-                    </div>
+                    <h3 className="text-3xl font-bold mb-3 tracking-tight text-slate-950">Predictive Workflows.</h3>
                  </div>
-                 {/* Moving SVG element for dark card */}
-                 <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:flex items-center justify-center">
-                    <div className="relative w-80 h-40">
-                       <svg className="w-full h-full text-white/5" viewBox="0 0 200 100">
-                          <path d="M0 50 Q 50 10 100 50 T 200 50" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" className="animate-[slide_10s_linear_infinite]" />
-                          <path d="M0 70 Q 50 30 100 70 T 200 70" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" className="animate-[slide_7s_linear_infinite_reverse]" />
-                       </svg>
-                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                          <MousePointer2 className="h-8 w-8 text-white animate-bounce" />
-                       </div>
-                    </div>
+                 <div className="mt-12 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                   <p className="text-slate-500 text-lg leading-relaxed max-w-md">
+                     AI-powered models that understand user intent. Automate customer engagement and product optimizations before your users even ask.
+                   </p>
+                   <Button className="h-11 px-6 text-sm rounded-full bg-slate-950 text-white hover:bg-slate-800 font-bold w-fit shrink-0">
+                      Learn More
+                   </Button>
                  </div>
               </div>
             </div>
@@ -324,9 +287,9 @@ export function LandingPage() {
 
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Basic */}
-              <div className="bg-white border border-slate-100 p-12 rounded-[2.5rem] flex flex-col transition-all">
-                <h4 className="text-xl font-bold mb-2">Starter</h4>
-                <p className="text-slate-400 text-sm mb-10 font-medium">Great for side projects and small teams.</p>
+              <div className="rounded-[2rem] border border-slate-200/60 bg-white p-10 flex flex-col transition-colors hover:border-slate-300">
+                <h4 className="text-xl font-bold mb-2 text-slate-950">Starter</h4>
+                <p className="text-slate-500 text-sm mb-10 font-medium">Great for side projects and small teams.</p>
                 <div className="mb-10">
                   <span className="text-5xl font-black text-slate-950">$0</span>
                   <span className="text-slate-400 font-bold ml-2">/month</span>
@@ -334,18 +297,21 @@ export function LandingPage() {
                 <ul className="space-y-4 mb-12 flex-1">
                   {["Up to 3 projects", "1,000 requests/mo", "Community support", "Basic analytics"].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-sm font-semibold text-slate-600">
-                      <Check className="h-5 w-5 text-slate-950" /> {item}
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-slate-900 shrink-0">
+                        <Check className="h-3 w-3" />
+                      </div> 
+                      {item}
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full h-12 text-sm rounded-2xl font-bold border-slate-200">Get Started</Button>
+                <Button variant="outline" className="w-full h-12 text-sm rounded-full font-bold border-slate-200 text-slate-950 hover:bg-slate-50">Get Started</Button>
               </div>
 
               {/* Pro */}
-              <div className="bg-white border-4 border-violet-600 p-12 rounded-[3rem] flex flex-col scale-105 relative z-10">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-violet-600 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2 rounded-full">Most Popular</div>
-                <h4 className="text-xl font-bold mb-2">Professional</h4>
-                <p className="text-slate-400 text-sm mb-10 font-medium">Everything you need to grow.</p>
+              <div className="rounded-[2rem] border-2 border-violet-950 bg-slate-50 p-10 flex flex-col relative transition-colors">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-violet-950 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">Most Popular</div>
+                <h4 className="text-xl font-bold mb-2 text-slate-950">Professional</h4>
+                <p className="text-slate-500 text-sm mb-10 font-medium">Everything you need to grow.</p>
                 <div className="mb-10">
                   <span className="text-5xl font-black text-slate-950">$49</span>
                   <span className="text-slate-400 font-bold ml-2">/month</span>
@@ -353,28 +319,34 @@ export function LandingPage() {
                 <ul className="space-y-4 mb-12 flex-1 font-bold text-slate-900">
                   {["Unlimited projects", "100k requests/mo", "Priority email support", "Advanced analytics", "Custom domains", "Team collaboration"].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-sm">
-                      <Check className="h-5 w-5 text-slate-950" /> {item}
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-violet-950 text-white shrink-0">
+                        <Check className="h-3 w-3" />
+                      </div>
+                      {item}
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full h-12 text-sm rounded-2xl font-bold bg-violet-600 text-white hover:bg-violet-700">Start 14-day Free Trial</Button>
+                <Button className="w-full h-12 text-sm rounded-full font-bold bg-violet-950 text-white hover:bg-violet-900">Start 14-day Free Trial</Button>
               </div>
 
               {/* Enterprise */}
-              <div className="bg-white border border-slate-100 p-12 rounded-[2.5rem] flex flex-col transition-all">
-                <h4 className="text-xl font-bold mb-2">Enterprise</h4>
-                <p className="text-slate-400 text-sm mb-10 font-medium">Scalability for large organizations.</p>
+              <div className="rounded-[2rem] border border-slate-200/60 bg-white p-10 flex flex-col transition-colors hover:border-slate-300">
+                <h4 className="text-xl font-bold mb-2 text-slate-950">Enterprise</h4>
+                <p className="text-slate-500 text-sm mb-10 font-medium">Scalability for large organizations.</p>
                 <div className="mb-10">
                   <span className="text-5xl font-black text-slate-950">Custom</span>
                 </div>
                 <ul className="space-y-4 mb-12 flex-1">
                   {["Unlimited everything", "Dedicated account manager", "24/7 Phone support", "SLA guarantees", "SSO & Security", "Custom contracts"].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-sm font-semibold text-slate-600">
-                      <Check className="h-5 w-5 text-slate-950" /> {item}
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-slate-900 shrink-0">
+                        <Check className="h-3 w-3" />
+                      </div>
+                      {item}
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full h-12 text-sm rounded-2xl font-bold border-slate-200">Contact Sales</Button>
+                <Button variant="outline" className="w-full h-12 text-sm rounded-full font-bold border-slate-200 text-slate-950 hover:bg-slate-50">Contact Sales</Button>
               </div>
             </div>
           </div>
@@ -392,7 +364,7 @@ export function LandingPage() {
               Start your free trial today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="h-14 px-8 text-base font-bold bg-violet-600 text-white hover:bg-violet-700 rounded-full transition-all hover:-translate-y-1">
+              <Button size="lg" className="h-14 px-8 text-base font-bold bg-violet-950 text-white hover:bg-violet-900 rounded-full transition-all hover:-translate-y-1">
                 Get Started for Free
               </Button>
               <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold border-slate-200 text-slate-950 hover:bg-slate-50 rounded-full transition-all hover:-translate-y-1">
